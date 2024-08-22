@@ -1,12 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Protest+Strike&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-body{font-family:"Ubuntu",sans-serif;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#fff8d6;padding:0;margin:0;}
+body{font-family:"Ubuntu",sans-serif;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#fff8d6;padding:0;margin:0; position: relative; }
 .main{width:80vw;background:#fff;box-shadow:0 0 20px 10px #ccc;padding:2vw;margin-bottom:2vw;}
 .chargr {display: flex; flex-wrap: wrap; justify-content: center;}
-.char{border:1px solid #ccc;border-radius:4px;display:flex;padding:1vw; margin: 0.5vw; width: 100%; max-width: calc(48% - 2vw);}
-.charim{width:14vw;margin:0 1vw 0 0;}
+.char{border:1px solid #ccc;border-radius:4px;display:flex;padding:1vw; margin: 0.5vw; width: 100%; max-width: calc(48% - 2vw); position: relative;}
+.wide { max-width: 100%;  flex-direction: column; text-align: center; }
+.mini { max-width: 100%;  flex-direction: row; text-align: center;  justify-content:center; border: 0; margin: 0; padding: 0;}
+
+
+.charim{margin:0 1vw 0 0;position:relative;display:flex;height:auto;object-fit:contain;}
+.charim img{width:14vw;height:auto;object-fit:contain;}
+.wide .charim{margin:0 0 1vw 0 ; flex-direction: column;}
+.wide .charim img{width:100%;}
+.mini .charim{margin:0 0 1vw 0 ; flex-direction: column; justify-content: center;}
+.mini .charim img{max-height:10vh; width: auto; margin: .5vh;}
+
+
+
+ .charim:hover::before {
+     content: '';
+     position: fixed;
+     top: 5vh;
+     left: 10vw;
+     width: 80vw;
+     height: 90vh;
+     background: #1a1544;
+     display: flex;
+     align-self: center;
+     justify-content: center;
+     align-items: center;
+     z-index: 1000;
+     box-shadow: 0 0 100px 20px #1a1544;
+ }
+
+ .charim:hover img {
+     /* transform: scale(1); */
+     z-index: 1001;
+     /* Diğer imajların üstünde görünmesi için */
+
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%) scale(1);
+     width: auto;
+     /* Bu width ve height'i otomatik ayarlamak için */
+     height: auto;
+     /* Bu height'i otomatik ayarlamak için */
+     max-height: 90vh;
+     max-width: 80vw;
+     display: flex;
+ }
 h1,h2 {width: 100%; text-align: center;}
 
-h3{color:#2145b3;}
+h2 {font-family:"Protest",sans-serif; font-size: 3rem;}
+
+h3{color:#2145b3; font-size: 2rem; line-height: 1.1; margin:0;}
 .text-center {text-align: center;}
 .xbtn{display:flex; margin-bottom: 100px;}
